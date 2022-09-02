@@ -1,7 +1,7 @@
 import { SafeAreaView, Text, Image, StatusBar, StyleSheet, View, ScrollView, TouchableOpacity } from "react-native"
 import { useState, useEffect } from "react"
 
-export const API = "https://f6f6-2804-d57-5529-9b00-11f1-ee80-4a3f-cce2.ngrok.io"
+export const API = "http://8419-2804-d57-5529-9b00-6173-aafb-6065-b0dc.ngrok.io"
 
 export default function List({navigation}) {
     const [memes, setMemes] = useState([])
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     
     image: {
         width: 95,
-        height: 95,
+        height: 105,
         margin: 5,
         borderRadius: 10,
 

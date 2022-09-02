@@ -45,7 +45,7 @@ const styles = StyleSheet.create ({
     },
 
     likes: {
-        fontSize: 26,
+        fontSize: 24,
         margin: 10,
         color: "#3d405b",
 
@@ -53,20 +53,20 @@ const styles = StyleSheet.create ({
     },
     image: {
         width: "85%",
-        height: "55%",
+        height: "65%",
         borderRadius: 15,
     },
 
     ltText: {
         fontSize: 16,
-        margin: 10,
+        margin: 5,
         alignSelf: "center",
         color: "#3d405b",
 
     },
     text: {
         width: "100%",
-        height: "30%",
+        height: "20%",
         justifyContent: "center",
         
 
