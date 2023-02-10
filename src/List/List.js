@@ -1,25 +1,25 @@
 import { SafeAreaView, Text, Image, StatusBar, StyleSheet, View, ScrollView, TouchableOpacity } from "react-native"
 import { useState, useEffect } from "react"
 
-export const API = "http://f6ca-2804-d57-5529-9b00-7113-3098-6bcf-eaf3.ngrok.io"
+export const API = "https://3fd1-2804-d57-554d-0-35a0-ea75-e056-a6a2.ngrok.io"
 
-export default function List({navigation}) {
+export default function List({ navigation }) {
     const [memes, setMemes] = useState([])
 
-    useEffect (() => {
+    useEffect(() => {
         fetch(API + "/memes")
-        .then(async (response) => {
-            const data = await response.json()
-            setMemes(data)
-        })
-        .catch(() => alert("Não foi possível carregar os memes"))
-       
+            .then(async (response) => {
+                const data = await response.json()
+                setMemes(data)
+            })
+            .catch(() => alert("Não foi possível carregar os memes"))
+
     }, [])
 
-    function exportMeme (memeId){
-        navigation.navigate (
+    function exportMeme(memeId) {
+        navigation.navigate(
             "Details",
-            {memeId}
+            { memeId }
         )
     }
 
@@ -29,17 +29,17 @@ export default function List({navigation}) {
         <SafeAreaView style={styles.container}>
             <StatusBar />
             <ScrollView>
-                <Text style = {styles.title}>Meus memes</Text>
+                <Text style={styles.title}>Meus memes</Text>
 
-                <View style = {styles.memesView}>
+                <View style={styles.memesView}>
 
-                {  
-                    memes.map((meme) => (
-                        <TouchableOpacity key = {meme.id} onPress = {()=> exportMeme(meme.id)} style = {styles.imageContainer}>
-                            <Image style = {styles.image} source = {{uri: meme.url}} resizeMode = "contain"/>
-                        </TouchableOpacity>
-                    ))
-                }
+                    {
+                        memes.map((meme) => (
+                            <TouchableOpacity key={meme.id} onPress={() => exportMeme(meme.id)} style={styles.imageContainer}>
+                                <Image style={styles.image} source={{ uri: meme.url }} resizeMode="contain" />
+                            </TouchableOpacity>
+                        ))
+                    }
 
                 </View>
 
@@ -74,14 +74,14 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         marginVertical: 10,
-    }, 
+    },
 
     imageContainer: {
         width: "28%",
         marginHorizontal: "2%"
     },
-    
-    
+
+
     image: {
         width: "100%",
         height: 88,
@@ -90,8 +90,8 @@ const styles = StyleSheet.create({
 
 
     },
-    
-   
+
+
 
 
 })
